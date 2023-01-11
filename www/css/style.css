@@ -6,6 +6,10 @@ h1 {
   color:seashell;
 }
 
+h2 {
+  color:seashell;
+}
+
 label {
     color: white;
   display: block;
@@ -50,3 +54,6 @@ th, td {
 td.num {
   text-align: right;
 }
+
+
+
