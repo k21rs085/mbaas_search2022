@@ -54,6 +54,17 @@
                 })
         }
 
+        function searchNumber() {
+            let number = parseInt($("#number").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("number", number)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
 
 
 
@@ -100,6 +111,7 @@
         <button class="btn" onclick="searchName()">Name</button>
         <button class="btn" onclick="searchNumberGT()">Num &gt</button>
         <button class="btn" onclick="fetchAll()">Fetch All</button>
+        <button class="btn" onclick="searchNumber()">number</button>
     </div>
     <div id="message">message area</div>
     <h2>best Album ver(1992-2023)</h2>
