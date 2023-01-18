@@ -23,6 +23,14 @@
                 })
         }
 
+        function fetchAll2() {
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.order("songs", true).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
         function searchName() {
             let name = $("#name").val();
             let TestDataClass = ncmb.DataStore(db);
@@ -140,12 +148,13 @@
         <button class="btn" onclick="searchYearDate()">YearDate</button>
         <button class="btn" onclick="searchsongs()">songs</button>
         <button class="btn" onclick="fetchAll()">num順</button>
-        
+        <button class="btn" onclick="fetchAll2()">songs順</button>
+
     </div>
     <div id="message">message area</div>
     <h2>best Album ver(1992-2023)</h2>
     <h3>肉・骨は1992-1995と1996-2000である</h3>
-    <h3>num順は表示ボタン<h3>
+    <h3>num順・songs順は表示ボタン<h3>
 </body>
 
 </html>
