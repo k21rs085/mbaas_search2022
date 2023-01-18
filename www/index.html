@@ -40,13 +40,14 @@
 
         function showResults(results) {
             // テーブルのヘッダを生成
-            let msg = "<table><tr><th>name</th><th>YearDate</th><th>sales</th>";
+            let msg = "<table><tr><th>number</th><th>name</th><th>YearDate</th><th>songs</th>";
             for (let i = 0; i < results.length; i++) {
                 // 各データを収めた表の列を生成
                 msg += "<tr>";
+                msg += "<td class='num'>" + results[i].number + "</td>";
                 msg += "<td>" + results[i].name + "</td>";
                 msg += "<td class='num'>" + results[i].YearDate + "</td>";
-                msg += "<td class='num'>" + results[i].sales + "</td>";
+                msg += "<td class='num'>" + results[i].songs + "</td>";
                 
             }
             // テーブルのテイラを生成
@@ -72,7 +73,9 @@
         <button class="btn" onclick="searchName()">Name</button>
     </div>
     <div id="message">message area</div>
-     <h2>2023までのCDsingle<h2>
+     <h2>2023までのベストアルバム</h2>
+    <h3>肉・骨はそれぞれ1992-1995と1996-2000である。
+    </h3>
 </body>
 
 </html>
