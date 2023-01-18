@@ -65,6 +65,28 @@
                 })
         }
 
+        function searchYearDate() {
+            let YearDate = parseInt($("#YearDate").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("YearDate", YearDate)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function searchsongs() {
+            let songs = parseInt($("#songs").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("songs", songs)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
 
 
 
@@ -106,17 +128,24 @@
         <label for="number">number:</label>
         <input id="number" type="number" placeholder="number">
     </div>
+    <div>
+        <label for="songs">songs:</label>
+        <input id="songs" type="songs" placeholder="songs">
+    </div>
     <div id="button">
         <button class="btn" onclick="searchNumberLT()">Num &lt</button>
         <button class="btn" onclick="searchName()">Name</button>
         <button class="btn" onclick="searchNumberGT()">Num &gt</button>
-        <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchNumber()">number</button>
+        <button class="btn" onclick="searchYearDate()">YearDate</button>
+        <button class="btn" onclick="searchsongs()">songs</button>
+        <button class="btn" onclick="fetchAll()">num順</button>
+        
     </div>
     <div id="message">message area</div>
     <h2>best Album ver(1992-2023)</h2>
-    <h3>肉・骨はそれぞれ1992-1995と1996-2000である。
-    </h3>
+    <h3>肉・骨は1992-1995と1996-2000である</h3>
+    <h3>num順は表示ボタン<h3>
 </body>
 
 </html>
